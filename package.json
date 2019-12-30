@@ -1,0 +1,12 @@
+{
+  "name": "hlnify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+   
+  },
+  "keywords": [],
+  "author": "Thomas MacLean <hello@thomasmaclean.be> (https://thomasmaclean.be)",
+  "license": "MIT"
+}
