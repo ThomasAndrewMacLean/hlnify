@@ -38,13 +38,23 @@
                     <input required type="number" name="commentaren-input" id="commentaren-input">
 
                     <label class="foto-knop" for="foto-input">Foto opladen <i class="fas fa-upload"></i></label>
-                    <input required type="file" name="foto-input" id="foto-input">
+                    <input required type="file" accept="image/x-png,image/gif,image/jpeg" name="foto-input"
+                        id="foto-input">
 
-                    <button id="save-button">save</button>
+                    <button class="button" id="save-button">Delen<i class="fas fa-share-alt"></i></button>
                 </form>
+
+                <div style="display:none;" id="share-list">
+                    <span id="link"></span>
+                    <button class="button" id="copy-button"><i class="far fa-copy"></i></button>
+                    <a href="/" class="new-button"><i class="fas fa-plus"></i></a>
+
+                </div>
             </div>
         </div>
         <div class="half article">
+            <span class="link">Nieuws</span>
+            <snap class="next">></snap><span class="link">Binnenland</span>
             <h1 id="title" class="title">Rutten haalt zwaar uit naar Jambon na uitspraak over asielzoekers:
                 “Extreem-rechts
                 broodjeaapverhaal”</h1>

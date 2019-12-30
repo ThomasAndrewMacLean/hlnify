@@ -56,7 +56,6 @@ function readFile() {
         FR.addEventListener('load', function(e) {
             foto.src = e.target.result;
             localStorage.setItem('base64Pic', e.target.result);
-            console.log(e.target.result);
         });
 
         FR.readAsDataURL(this.files[0]);
@@ -64,8 +63,36 @@ function readFile() {
 }
 
 fotoInput.addEventListener('change', readFile);
+function fallbackCopyTextToClipboard(text) {
+    var textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        document.execCommand('copy');
+    } catch (err) {
+        console.error('Fallback: Oops, unable to copy', err);
+    }
+    document.body.removeChild(textArea);
+}
+function copyTextToClipboard(text) {
+    if (!navigator.clipboard) {
+        fallbackCopyTextToClipboard(text);
+        return;
+    }
+    navigator.clipboard.writeText(text);
+}
+
+const copyButton = document.getElementById('copy-button');
+copyButton.addEventListener('click', () => {
+    copyTextToClipboard(link.innerText);
+});
 
 const saveButton = document.getElementById('form');
+const shareList = document.getElementById('share-list');
+const link = document.getElementById('link');
 
 saveButton.addEventListener('submit', e => {
     e.preventDefault();
@@ -91,7 +118,11 @@ saveButton.addEventListener('submit', e => {
     })
         .then(y => y.json())
         .then(x => {
-            window.location.href =
-                window.location.origin + '/load#' + x.body.split('"').join('');
+            form.style.display = 'none';
+            shareList.style.display = 'block';
+            link.innerText =
+                window.location.origin +
+                '/artikel#' +
+                x.body.split('"').join('');
         });
 });

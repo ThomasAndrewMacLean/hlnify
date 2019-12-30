@@ -35,6 +35,7 @@ body {
 .article {
     padding: 2rem;
     max-width: 540px;
+    margin: auto;
 }
 
 .metadata {
@@ -133,8 +134,8 @@ body {
     top: 15px;
     transform: rotate(45deg);
     left: -6px;
-    border-left: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
+    border-left: 2px solid #e5e5e5;
+    border-bottom: 2px solid #e5e5e5;
     background: #fff;
     border-radius: 1px;
 }
@@ -183,8 +184,48 @@ input {
     align-items: center;
     height: 40px;
     margin-top: 10px;
+    background-color: #fff;
 }
 
+.button {
+    cursor: pointer;
+    border: 1px solid darkgrey;
+    font-size: inherit;
+    font-family: inherit;
+    display: flex;
+    width: 150px;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+.foto-knop:hover,
+.button:hover {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.link {
+    color: #1313f1;
+    padding: 15px;
+    font-size: 13px;
+    display: inline-block;
+    font-family: Oswald;
+}
+
+.next {
+    font-size: 12px;
+    font-weight: 800;
+    color: #bbb;
+    margin-left: -6px;
+    display: inline-block;
+    transform: translateY(-1px);
+    margin-right: -7px;
+}
 
 .page-left {
 
@@ -199,16 +240,11 @@ input {
 
 @media screen and (max-width: 800px) {
     main {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .page-left {
-
-
-
         min-height: auto;
-
-
     }
 }
 
@@ -216,4 +252,51 @@ input {
     margin: auto;
     width: 90%;
     max-width: 400px;
+}
+
+.new-button {
+    color: red;
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    height: 40px;
+    width: 40px;
+    border: 2px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#share-list {
+    padding: 15px;
+    margin-top: 40px;
+}
+
+#link {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#copy-button {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50%;
+    background: inherit;
+    border: 1px solid black;
+}
+
+#copy-button:hover,
+#copy-button:focus,
+#copy-button:active {
+    color: black;
+}
+
+
+
+
+
 }
