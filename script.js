@@ -94,7 +94,12 @@ const saveButton = document.getElementById('form');
 const shareList = document.getElementById('share-list');
 const link = document.getElementById('link');
 
+let busy = false;
+
 saveButton.addEventListener('submit', e => {
+    if (busy) return;
+    busy = true;
+
     e.preventDefault();
 
     fetch(ENDPOINT, {
@@ -118,6 +123,7 @@ saveButton.addEventListener('submit', e => {
     })
         .then(y => y.json())
         .then(x => {
+            busy = false;
             form.style.display = 'none';
             shareList.style.display = 'block';
             link.innerText =
