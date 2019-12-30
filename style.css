@@ -2,11 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow-x: hidden; */
 }
 
 main {
     display: flex;
 }
+
+
 
 body {
     font-size: 18px;
@@ -20,17 +23,17 @@ body {
     font-weight: 600;
     margin-bottom: 0;
     padding: 0 15px;
+    overflow-wrap: break-word;
 
 }
 
 .half {
-    width: 50%;
-    margin: 2rem;
+    width: 100vw;
+
 }
 
 .article {
-    margin: 2rem;
-
+    padding: 2rem;
     max-width: 540px;
 }
 
@@ -147,10 +150,12 @@ img {
 
 form {
     margin: 15px;
-    font-family: Oswald;
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
+    color: #333;
     flex-direction: column;
     max-width: 400px;
+    width: 90%;
 }
 
 input {
@@ -192,7 +197,23 @@ input {
 
 }
 
+@media screen and (max-width: 800px) {
+    main {
+        flex-direction: column;
+    }
+
+    .page-left {
+
+
+
+        min-height: auto;
+
+
+    }
+}
+
 .wrapper {
     margin: auto;
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
 }
