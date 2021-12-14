@@ -128,7 +128,7 @@ saveButton.addEventListener('submit', e => {
             shareList.style.display = 'block';
             link.innerText =
                 window.location.origin +
-                '/artikel#' +
+                '/hlnify/artikel#' +
                 x.body.split('"').join('');
         });
 });
